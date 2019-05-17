@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * <p>
@@ -52,12 +53,34 @@ public class UserRestController {
 
         Map<String, Object> map = new HashMap<>(4);
 
-        User user = new User().setNickname(nickname);
+        User user = new User().setNickname(nickname).setPassword(UUID.randomUUID().toString().replace("-", ""));
 
         boolean save = userService.save(user);
 
         map.put("save", save);
         map.put("user", user);
+
+        return map;
+    }
+
+    /**
+     * 根据 ID 删除
+     * <p>
+     * http://127.0.0.1/user/removeById?id=18
+     * <p>
+     * 存在数据，删除了，返回 true
+     * 不存在数据，返回 false
+     *
+     * @param id 用户主键
+     */
+    @RequestMapping("/removeById")
+    public Map<String, Object> removeById(HttpServletRequest request, HttpServletResponse response, String id) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        boolean removeById = userService.removeById(id);
+
+        map.put("removeById", removeById);
 
         return map;
     }
