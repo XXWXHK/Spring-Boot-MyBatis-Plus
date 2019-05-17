@@ -86,6 +86,46 @@ public class UserRestController {
     }
 
     /**
+     * 根据 entity 条件，删除记录
+     * <p>
+     * http://127.0.0.1/user/remove?age=30
+     * <p>
+     * 存在数据，删除了，返回 true
+     * 不存在数据，返回 false
+     * <p>
+     * 删除只是逻辑删除（状态改变），数据还在数据库中
+     *
+     * @param age 年龄
+     */
+    @RequestMapping("/remove")
+    public Map<String, Object> remove(HttpServletRequest request, HttpServletResponse response, String age) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+
+        // eq：等于
+        // ne：不等于
+        // gt：大于
+        // ge：大于等于
+        // lt：小于
+        // le：小于等于
+        // between：在两个值之间
+        // notBetween：不在两个值之间
+        // like：像，LIKE '%值%'
+        // notLike：不像，NOT LIKE '%值%'
+        // likeLeft：LIKE '%值'
+        // likeRight：LIKE '值%'
+        userQueryWrapper.gt(User.AGE, age);
+
+        boolean removeById = userService.remove(userQueryWrapper);
+
+        map.put("removeById", removeById);
+
+        return map;
+    }
+
+    /**
      * 根据 ID 查询
      * <p>
      * http://127.0.0.1/user/getById?id=5
