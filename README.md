@@ -1,6 +1,8 @@
 # Spring-Boot-MyBatis-Plus
 Spring Boot 整合 MyBatis Plus。
 
+# 依赖
+
 ## Spring Boot 依赖（创建项目时选择）
     
 - Web
@@ -11,4 +13,14 @@ Spring Boot 整合 MyBatis Plus。
     
 - SQL
     - MySQL                 MySQL JDBC驱动程序
+    
+## 其他依赖（创建项目时不可选）
+
+- MyBatis Plus
+
+    - MyBatis Plus Boot Starter         Spring Boot 整合 MyBatis Plus 必须依赖。
+    
+    - MyBatis Plus Generator            MyBatis Plus 代码生成器 依赖。
+    
+    - Spring Boot Starter Velocity      Velocity 模板引擎，MyBatis Plus 代码生成器 默认模板引擎。
 
