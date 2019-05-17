@@ -41,6 +41,28 @@ public class UserRestController {
     }
 
     /**
+     * 插入一条记录（选择字段，策略插入）
+     * <p>
+     * http://127.0.0.1/user/save?nickname=AAAAA
+     *
+     * @param nickname 昵称
+     */
+    @RequestMapping("/save")
+    public Map<String, Object> save(HttpServletRequest request, HttpServletResponse response, String nickname) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        User user = new User().setNickname(nickname);
+
+        boolean save = userService.save(user);
+
+        map.put("save", save);
+        map.put("user", user);
+
+        return map;
+    }
+
+    /**
      * 根据 ID 查询
      * <p>
      * http://127.0.0.1/user/getById?id=5
