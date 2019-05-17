@@ -42,6 +42,8 @@ public class UserRestController {
 
     /**
      * 根据 ID 查询
+     * <p>
+     * http://127.0.0.1/user/getById?id=5
      *
      * @param id 用户主键
      */
@@ -59,6 +61,9 @@ public class UserRestController {
 
     /**
      * 根据 Wrapper，查询一条记录
+     * <p>
+     * 正常：http://127.0.0.1/user/getOne?age=47
+     * 多条数据报错：http://127.0.0.1/user/getOne?age=21
      *
      * @param age 年龄
      */
@@ -74,6 +79,29 @@ public class UserRestController {
         User user = userService.getOne(userQueryWrapper);
 
         map.put("user", user);
+
+        return map;
+    }
+
+    /**
+     * 根据 Wrapper 条件，查询总记录数
+     * <p>
+     * http://127.0.0.1/user/count?age=21
+     *
+     * @param age 年龄
+     */
+    @RequestMapping("/count")
+    public Map<String, Object> count(HttpServletRequest request, HttpServletResponse response, String age) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+
+        userQueryWrapper.eq(User.AGE, age);
+
+        int count = userService.count(userQueryWrapper);
+
+        map.put("count", count);
 
         return map;
     }
