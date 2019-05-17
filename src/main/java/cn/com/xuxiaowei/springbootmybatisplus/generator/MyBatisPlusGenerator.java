@@ -86,6 +86,11 @@ public class MyBatisPlusGenerator {
     private String superControllerClass = null;
 
     /**
+     * Controller 名
+     */
+    private String controllerName = "%sRestController";
+
+    /**
      * 是否生成 BaseResultMap
      */
     private boolean baseResultMap = true;
@@ -274,6 +279,9 @@ public class MyBatisPlusGenerator {
 
         // 开启 BaseResultMap
         globalConfig.setBaseResultMap(baseResultMap);
+
+        // 设置 Controller 名
+        globalConfig.setControllerName(controllerName);
 
         return globalConfig;
     }
