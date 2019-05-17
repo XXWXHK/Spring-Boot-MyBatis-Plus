@@ -3,6 +3,7 @@ package cn.com.xuxiaowei.springbootmybatisplus.controller;
 
 import cn.com.xuxiaowei.springbootmybatisplus.entity.User;
 import cn.com.xuxiaowei.springbootmybatisplus.service.IUserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,6 +51,27 @@ public class UserRestController {
         Map<String, Object> map = new HashMap<>(4);
 
         User user = userService.getById(id);
+
+        map.put("user", user);
+
+        return map;
+    }
+
+    /**
+     * 根据 Wrapper，查询一条记录
+     *
+     * @param age 年龄
+     */
+    @RequestMapping("/getOne")
+    public Map<String, Object> getOne(HttpServletRequest request, HttpServletResponse response, String age) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+
+        userQueryWrapper.eq(User.AGE, age);
+
+        User user = userService.getOne(userQueryWrapper);
 
         map.put("user", user);
 
