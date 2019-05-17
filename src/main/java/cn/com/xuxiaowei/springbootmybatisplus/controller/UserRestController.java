@@ -4,6 +4,9 @@ package cn.com.xuxiaowei.springbootmybatisplus.controller;
 import cn.com.xuxiaowei.springbootmybatisplus.entity.User;
 import cn.com.xuxiaowei.springbootmybatisplus.service.IUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -190,6 +194,48 @@ public class UserRestController {
 
         return map;
     }
+
+    /**
+     * 无条件翻页查询
+     * <p>
+     * http://127.0.0.1/user/page
+     *
+     * @param current 页数
+     * @param size    每页条数
+     */
+    @RequestMapping("/page")
+    public Map<String, Object> page(HttpServletRequest request, HttpServletResponse response, String current, String size) {
+
+        Map<String, Object> map = new HashMap<>(4);
+
+        if (StringUtils.isEmpty(current)) {
+            map.put("current", "不可为空");
+            return map;
+        }
+
+        if (StringUtils.isEmpty(size)) {
+            map.put("size", "不可为空");
+            return map;
+        }
+
+        long currentLong = Long.parseLong(current);
+
+        long sizeLong = Long.parseLong(size);
+
+        Page<User> page = new Page<>(currentLong, sizeLong);
+
+        // 排序
+        page.setAsc(User.ID);
+
+        IPage pages = userService.page(page);
+
+        List records = pages.getRecords();
+
+        map.put("records", records);
+
+        return map;
+    }
+
 
 }
 
