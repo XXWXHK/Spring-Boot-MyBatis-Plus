@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="cn.com.xuxiaowei.springbootmybatisplus.entity.User">
         <id column="id" property="id" />
         <result column="username" property="username" />
+        <result column="nickname" property="nickname" />
         <result column="password" property="password" />
         <result column="age" property="age" />
         <result column="create_date" property="createDate" />

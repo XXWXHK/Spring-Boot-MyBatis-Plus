@@ -1,6 +1,5 @@
 package cn.com.xuxiaowei.springbootmybatisplus.entity;
 
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -39,6 +38,12 @@ public class User implements Serializable {
      */
     @TableField("username")
     private String username;
+
+    /**
+     * 昵称
+     */
+    @TableField("nickname")
+    private String nickname;
 
     /**
      * 密码
@@ -81,6 +86,8 @@ public class User implements Serializable {
     public static final String ID = "id";
 
     public static final String USERNAME = "username";
+
+    public static final String NICKNAME = "nickname";
 
     public static final String PASSWORD = "password";
 
