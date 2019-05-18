@@ -22,6 +22,7 @@ import java.util.UUID;
  * <p>
  * 用户表（测试） 前端控制器
  * </p>
+ * 使用了 @RestController 只能返回数据，不能返回页面
  *
  * @author 徐晓伟
  * @since 2019-05-17
@@ -36,7 +37,15 @@ public class UserRestController {
     private final IUserService userService;
 
     /**
-     * 尽量使用这种方式注入（最好的方式）
+     * 最好的方式（官方推荐）
+     * <p>
+     * Controller层尽量使用这种方式注入，否则会后警告
+     * <p>
+     * 注入警告有时是错误，而你开始时无从得知
+     * <p>
+     * 注入没有警告，即肯定没有错误
+     * <p>
+     * Servlet注册为Bean后，直接注入即可
      *
      * @param userService 用户表（测试） 服务类
      */
@@ -57,7 +66,9 @@ public class UserRestController {
 
         Map<String, Object> map = new HashMap<>(4);
 
-        User user = new User().setNickname(nickname).setPassword(UUID.randomUUID().toString().replace("-", ""));
+        String password = UUID.randomUUID().toString().replace("-", "");
+
+        User user = new User().setNickname(nickname).setPassword(password);
 
         boolean save = userService.save(user);
 
