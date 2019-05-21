@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootmybatisplus.config;
+package cn.com.xuxiaowei.mybatisplus.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan("cn.com.xuxiaowei.springbootmybatisplus.mapper.**")
+@MapperScan("cn.com.xuxiaowei.mybatisplus.mapper.**")
 public class MybatisPlusConfig {
 
     /**

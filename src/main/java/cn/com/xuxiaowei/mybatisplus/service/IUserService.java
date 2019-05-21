@@ -1,6 +1,6 @@
-package cn.com.xuxiaowei.springbootmybatisplus.service;
+package cn.com.xuxiaowei.mybatisplus.service;
 
-import cn.com.xuxiaowei.springbootmybatisplus.entity.User;
+import cn.com.xuxiaowei.mybatisplus.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

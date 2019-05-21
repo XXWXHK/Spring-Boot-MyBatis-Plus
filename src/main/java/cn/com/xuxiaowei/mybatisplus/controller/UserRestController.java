@@ -1,8 +1,8 @@
-package cn.com.xuxiaowei.springbootmybatisplus.controller;
+package cn.com.xuxiaowei.mybatisplus.controller;
 
 
-import cn.com.xuxiaowei.springbootmybatisplus.entity.User;
-import cn.com.xuxiaowei.springbootmybatisplus.service.IUserService;
+import cn.com.xuxiaowei.mybatisplus.entity.User;
+import cn.com.xuxiaowei.mybatisplus.service.IUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

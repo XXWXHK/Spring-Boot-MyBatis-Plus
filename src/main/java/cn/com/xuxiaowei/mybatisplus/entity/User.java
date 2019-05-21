@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootmybatisplus.entity;
+package cn.com.xuxiaowei.mybatisplus.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

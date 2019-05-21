@@ -1,4 +1,4 @@
-package cn.com.xuxiaowei.springbootmybatisplus;
+package cn.com.xuxiaowei.mybatisplus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author xuxiaowei
  */
 @SpringBootApplication
-public class SpringBootMybatisPlusApplication {
+public class MybatisPlusApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootMybatisPlusApplication.class, args);
+        SpringApplication.run(MybatisPlusApplication.class, args);
     }
 
 }

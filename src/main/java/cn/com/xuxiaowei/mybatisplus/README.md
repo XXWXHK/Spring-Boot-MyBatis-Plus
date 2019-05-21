@@ -1,6 +1,6 @@
 # 文件（夹）说明：
 
-- SpringBootMybatisPlusApplication
+- MybatisPlusApplication
 
     - 程序执行入口
     

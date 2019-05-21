@@ -1,8 +1,8 @@
-package cn.com.xuxiaowei.springbootmybatisplus.service.impl;
+package cn.com.xuxiaowei.mybatisplus.service.impl;
 
-import cn.com.xuxiaowei.springbootmybatisplus.entity.User;
-import cn.com.xuxiaowei.springbootmybatisplus.mapper.UserMapper;
-import cn.com.xuxiaowei.springbootmybatisplus.service.IUserService;
+import cn.com.xuxiaowei.mybatisplus.entity.User;
+import cn.com.xuxiaowei.mybatisplus.mapper.UserMapper;
+import cn.com.xuxiaowei.mybatisplus.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
