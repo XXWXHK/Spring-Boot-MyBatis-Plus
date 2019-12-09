@@ -9,13 +9,13 @@ spring:
   # 数据库 配置
   datasource:
     # 数据库 驱动名称（包括包名）
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: oracle.jdbc.driver.OracleDriver
     # 数据库 URL
-    url: jdbc:mysql://127.0.0.1:3306/demo?useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:oracle:thin:@192.168.111.169:1521:ORCL
     # 数据库 用户名
-    username: root
+    username: TESTSERVICE
     # 数据库 密码
-    password: root
+    password: TESTSERVICE
   #
   # 配置文件 配置
   profiles:
