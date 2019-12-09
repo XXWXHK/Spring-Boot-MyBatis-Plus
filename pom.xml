@@ -23,7 +23,7 @@
         <!-- 2019年4月26日 -->
         <!-- Spring Boot 整合 MyBatis Plus 必须依赖 -->
         <!-- MyBatis Plus 代码生成器 依赖 -->
-        <mybatis-plus-boot-starter.verssion>3.1.1</mybatis-plus-boot-starter.verssion>
+        <mybatis-plus-boot-starter.verssion>3.3.0</mybatis-plus-boot-starter.verssion>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
         <!-- 2017年6月8日 -->
         <!-- Spring Boot Starter Velocity 模板引擎, 默认 -->
