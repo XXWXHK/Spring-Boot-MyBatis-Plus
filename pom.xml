@@ -59,6 +59,13 @@
             <version>${spring-boot-starter-velocity.version}</version>
         </dependency>
 
+        <!-- java.sql.SQLException: 不支持的字符集 (在类路径中添加 orai18n.jar): ZHS16GBK -->
+        <!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/orai18n -->
+        <dependency>
+            <groupId>com.oracle.ojdbc</groupId>
+            <artifactId>orai18n</artifactId>
+            <version>19.3.0.0</version>
+        </dependency>
 
         <!-- 以上为项目自定义依赖 -->
 
@@ -77,10 +84,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- - MySQL -->
+        <!-- Oracle -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.oracle.ojdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
             <!-- 防止单独运行类（非运行Spring Boot）时使用MySQL驱动（MyBatis Plus自动生成实体类相关）出错 -->
             <!--<scope>runtime</scope>-->
         </dependency>
