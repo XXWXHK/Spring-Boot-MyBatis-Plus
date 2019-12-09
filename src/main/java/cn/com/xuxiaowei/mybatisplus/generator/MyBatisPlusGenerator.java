@@ -55,17 +55,17 @@ public class MyBatisPlusGenerator {
     /**
      * 数据库 地址
      */
-    private String url = "jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=GMT%2B8";
+    private String url = "jdbc:oracle:thin:@192.168.111.169:1521:ORCL";
 
     /**
      * 数据库 用户名
      */
-    private String username = "root";
+    private String username = "TESTSERVICE";
 
     /**
      * 数据库 密码
      */
-    private String password = "root";
+    private String password = "TESTSERVICE";
 
     /**
      * 数据库 驱动名称
@@ -73,7 +73,7 @@ public class MyBatisPlusGenerator {
      * com.mysql.jdbc.Driver 已过时，被弃用
      * com.mysql.cj.jdbc.Driver 请使用此类（在 pom.xml 中删除 MySQL 的运行范围 <scope>runtime</scope>）
      */
-    private String driverName = com.mysql.cj.jdbc.Driver.class.getName();
+    private String driverName = oracle.jdbc.driver.OracleDriver.class.getName();
 
     /**
      * 自定义继承的Entity类全称，带包名
