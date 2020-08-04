@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.com.xuxiaowei</groupId>
@@ -23,7 +23,7 @@
         <!-- 2019年4月26日 -->
         <!-- Spring Boot 整合 MyBatis Plus 必须依赖 -->
         <!-- MyBatis Plus 代码生成器 依赖 -->
-        <mybatis-plus-boot-starter.verssion>3.1.1</mybatis-plus-boot-starter.verssion>
+        <mybatis-plus-boot-starter.verssion>3.3.2</mybatis-plus-boot-starter.verssion>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
         <!-- 2017年6月8日 -->
         <!-- Spring Boot Starter Velocity 模板引擎, 默认 -->
@@ -32,6 +32,7 @@
         <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
         <!-- MyBatis Plus Boot Starter End -->
 
+        <p6spy.version>3.9.1</p6spy.version>
 
     </properties>
 
@@ -59,6 +60,12 @@
             <version>${spring-boot-starter-velocity.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
+        </dependency>
 
         <!-- 以上为项目自定义依赖 -->
 
