@@ -19,12 +19,6 @@ spring:
     # 数据库 密码
     password: root
   #
-  # 配置文件 配置
-  profiles:
-    # 激活 配置
-    # dev-sql：MyBatis Plus中性能及SQL打印等配置
-    active: dev-sql
-  #
   # Thymeleaf 配置
   thymeleaf:
     # 是否启用模板缓存。
